@@ -7,12 +7,19 @@ import RPi.GPIO as GPIO
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(18,GPIO.OUT)  # Set up GPIO pins as outputs
-GPIO.setup(23,GPIO.OUT)
-GPIO.setup(24,GPIO.OUT)
-GPIO.setup(4,GPIO.OUT)
+light1 = 18
+light2 = 23
+light3 = 24
+light4 = 15
+light5 = 14
 
-pins = [4, 18, 23, 24]
+GPIO.setup(light1,GPIO.OUT)  # Set up GPIO pins as outputs
+GPIO.setup(light2,GPIO.OUT)
+GPIO.setup(light3,GPIO.OUT)
+GPIO.setup(light4,GPIO.OUT)
+GPIO.setup(light5,GPIO.OUT)
+
+pins = [light1, light2, light3, light4, light5]
 
 try:
     while True:

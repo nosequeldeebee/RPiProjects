@@ -4,50 +4,55 @@ import time
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-GPIO.setup(17,GPIO.OUT)
+
+chosenpin = 2
+
+GPIO.setup(chosenpin,GPIO.OUT)
+
+loop_count = 0
 
 def morsecode ():
 
 	#Dot Dot Dot
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(chosenpin,GPIO.HIGH)
 	time.sleep(.1)
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(chosenpin,GPIO.LOW)
 	time.sleep(.1)
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(chosenpin,GPIO.HIGH)
 	time.sleep(.1)
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(chosenpin,GPIO.LOW)
 	time.sleep(.1)
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(chosenpin,GPIO.HIGH)
 	time.sleep(.1)
 
 	#Dash Dash Dah
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(chosenpin,GPIO.LOW)
 	time.sleep(.2)
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(chosenpin,GPIO.HIGH)
 	time.sleep(.2)
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(chosenpin,GPIO.LOW)
 	time.sleep(.2)
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(chosenpin,GPIO.HIGH)
 	time.sleep(.2)
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(chosenpin,GPIO.LOW)
 	time.sleep(.2)
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(chosenpin,GPIO.HIGH)
 	time.sleep(.2)
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(chosenpin,GPIO.LOW)
 	time.sleep(.2)
 
 	#Dot Dot Dot
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(chosenpin,GPIO.HIGH)
 	time.sleep(.1)
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(chosenpin,GPIO.LOW)
 	time.sleep(.1)
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(chosenpin,GPIO.HIGH)
 	time.sleep(.1)
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(chosenpin,GPIO.LOW)
 	time.sleep(.1)
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(chosenpin,GPIO.HIGH)
 	time.sleep(.1)
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(chosenpin,GPIO.LOW)
 	time.sleep(.7)
 
 os.system('clear')

@@ -19,7 +19,7 @@ def RCtime (RCpin):
 try:
 
     while True:
-        print RCtime(27)     # Read RC timing using chosen pin
+        print RCtime(3)     # Read RC timing using assigned pin
 
 except KeyboardInterrupt:
     print "\nYou quit the program"

@@ -13,7 +13,9 @@ MAILBOX = 'Inbox'
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(17, GPIO.OUT) #buzzer
+buzzerpin = 2
+
+GPIO.setup(buzzerpin, GPIO.OUT) #buzzer
 GPIO.setup(18, GPIO.OUT) #LEDs
 GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.OUT)
@@ -26,31 +28,31 @@ print('Logging in as ' + USERNAME)
 def buzz():
 
 	#Dot Dot Dot
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(buzzerpin,GPIO.HIGH)
 	time.sleep(.1)
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(buzzerpin,GPIO.LOW)
 	time.sleep(.1)
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(buzzerpin,GPIO.HIGH)
 	time.sleep(.1)
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(buzzerpin,GPIO.LOW)
 	time.sleep(.1)
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(buzzerpin,GPIO.HIGH)
 	time.sleep(.1)
 
 	#Dash Dash Dah
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(buzzerpin,GPIO.LOW)
 	time.sleep(.2)
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(buzzerpin,GPIO.HIGH)
 	time.sleep(.2)
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(buzzerpin,GPIO.LOW)
 	time.sleep(.2)
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(buzzerpin,GPIO.HIGH)
 	time.sleep(.2)
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(buzzerpin,GPIO.LOW)
 	time.sleep(.2)
-	GPIO.output(17,GPIO.HIGH)
+	GPIO.output(buzzerpin,GPIO.HIGH)
 	time.sleep(.2)
-	GPIO.output(17,GPIO.LOW)
+	GPIO.output(buzzerpin,GPIO.LOW)
 	time.sleep(.7)
 
 def blink():

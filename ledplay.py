@@ -34,4 +34,5 @@ while (run != 0):
         GPIO.cleanup()
         print 'KeyboardInterrupt caught'
         break
+
 print 'EXITED!'
