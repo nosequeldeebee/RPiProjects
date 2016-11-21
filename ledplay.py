@@ -2,27 +2,35 @@
 
 import RPi.GPIO as GPIO
 
+light1 = 18
+light2 = 23
+light3 = 24
+
+button1 = 10
+button2 = 27
+button3 = 22
+
 def my_callback(self):
-    GPIO.output(18, GPIO.input(17))
-    GPIO.output(23, GPIO.input(27))
-    GPIO.output(24, GPIO.input(22))
+    GPIO.output(light1, GPIO.input(button1))
+    GPIO.output(light2, GPIO.input(button2))
+    GPIO.output(light3, GPIO.input(button3))
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(18, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(button1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(light1, GPIO.OUT, initial=GPIO.LOW)
 
 
-GPIO.setup(27, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(23, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(button2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(light2, GPIO.OUT, initial=GPIO.LOW)
 
 
-GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(24, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(button3, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(light3, GPIO.OUT, initial=GPIO.LOW)
 
-GPIO.add_event_detect(17, GPIO.BOTH, callback=my_callback)
-GPIO.add_event_detect(27, GPIO.BOTH, callback=my_callback)
-GPIO.add_event_detect(22, GPIO.BOTH, callback=my_callback)
+GPIO.add_event_detect(button1, GPIO.BOTH, callback=my_callback)
+GPIO.add_event_detect(button2, GPIO.BOTH, callback=my_callback)
+GPIO.add_event_detect(button3, GPIO.BOTH, callback=my_callback)
 
 
 run = 1
@@ -30,8 +38,8 @@ while (run != 0):
     try:
         pass
     except KeyboardInterrupt:
-        run = 0
         GPIO.cleanup()
+        run = 0
         print 'KeyboardInterrupt caught'
         break
 
