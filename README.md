@@ -22,3 +22,11 @@ Detect ambience with photoresistor
 *buzzer.py*
 
 Buzzer activity based on user defined loop
+
+*infrared.py*
+
+An infrared motion detector
+
+*temp.py*
+
+Temperature sensor
